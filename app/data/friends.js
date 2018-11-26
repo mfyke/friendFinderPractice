@@ -1,4 +1,4 @@
-var friends = [
+const friends = [
 	{
 		"name": "Hanzo",
 		"picture": "https://c-3sux78kvnkay76x24j7a1v9r0cvge9qx2eiruajlx78utzx2etkz.g00.gamepedia.com/g00/3_c-3ubkx78cgzin.mgskvkjog.ius_/c-3SUXKVNKAY76x24nzzvyx3ax2fx2fj7a1v9r0cvge9q.iruajlx78utz.tkzx2fubkx78cgzin_mgskvkjogx2fgx2fg6x2fNgtfu-vux78zx78goz.vtmx3fbkx78youtx3di40064kghh8i936k494gl0743347ii48_$/$/$/$/$?i10c.ua=1&i10c.dv=21",
