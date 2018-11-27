@@ -132,21 +132,32 @@
 				$("#result").modal('toggle');
 			}
 			else{
-				$("#friendDisplay").html("<h1>Your best friend is ... </h1>");
-				console.log($("#name").val());
-				console.log($("#imgLink").val());
-				console.log($("#q1").val());
-				console.log($("#q2").val());
-				console.log($("#q3").val());
-				console.log($("#q4").val());
-				console.log($("#q5").val());
-				console.log($("#q6").val());
-				console.log($("#q7").val());
-				console.log($("#q8").val());
-				console.log($("#q9").val());
-				console.log($("#q10").val());
-
-				$("#result").modal('toggle');
+				var profData = {
+					"name": $("#name").val(),
+					"picture": $("#imgLink").val(),
+					"scores": [
+								$("#q1").val(),
+								$("#q2").val(),
+								$("#q3").val(),
+								$("#q4").val(),
+								$("#q5").val(),
+								$("#q6").val(),
+								$("#q7").val(),
+								$("#q8").val(),
+								$("#q9").val(),
+								$("#q10").val()
+					]
+				}
+				
+				console.log(profData);
+				$.post("/api/friends", profData, (data)=> {
+					console.log(data);
+					var friendName = $("<h1>").text(data.name);
+					var friendImg = $("<img>").attr("src", data.picture);
+					$("friendDisplay").empty();
+					$("#friendDisplay").append(friendName, friendImg);
+					$("#result").modal("toggle");
+				});
 			}
 		});
 		
